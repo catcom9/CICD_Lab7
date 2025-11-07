@@ -1,8 +1,10 @@
 package ie.atu.week7;
 
 import org.springframework.stereotype.Service;
+import org.yaml.snakeyaml.external.com.google.gdata.util.common.base.PercentEscaper;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonService {
@@ -19,7 +21,11 @@ public class PersonService {
         repo.deleteById(id);
     }
 
-
+    public Person updateDepartmentByEmployeeID(String department, String id){
+        Person current = findByEmployeeId(id);
+        current.setDepartment(department);
+        repo.save(current);
+    }
 
 
 }

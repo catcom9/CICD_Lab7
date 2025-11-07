@@ -37,8 +37,8 @@ public class PersonController {
     }
 
     @PutMapping("/{employeeID}")
-    public void updateByID(@PathVariable String employeeID, @RequestBody String department){
-        service.updateDepartmentByEmployeeID(employeeID, department);
+    public Person updateByID(@PathVariable String employeeID, @RequestBody String department){
+        return service.updateDepartmentByEmployeeID(employeeID, department);
     }
 
 

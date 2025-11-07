@@ -24,7 +24,7 @@ public class PersonService {
     public Person updateDepartmentByEmployeeID(String department, String id){
         Person current = findByEmployeeId(id);
         current.setDepartment(department);
-        repo.save(current);
+        return repo.save(current);
     }
 
 

@@ -36,5 +36,10 @@ public class PersonController {
         service.deleteByID(id);
     }
 
+    @PutMapping("/{employeeID}")
+    public Person updateByID(@PathVariable String employeeID, @RequestBody String department){
+        return service.updateDepartmentByEmployeeID(employeeID, department);
+    }
+
 
 }
